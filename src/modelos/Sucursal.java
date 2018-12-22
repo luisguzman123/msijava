@@ -29,7 +29,7 @@ public class Sucursal {
     }
 
     public int getId_sucursal() {
-        return id_sucursal;
+        return id_sucursal; //hola mundo
     }
 
     public void setId_sucursal(int id_sucursal) {
