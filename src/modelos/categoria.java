@@ -10,5 +10,17 @@ package modelos;
  * @author Oliver Acosta
  */
 public class categoria {
+    private int id_categoria;
+    private String nombre;
+    private int activo;
+
+    public categoria(String nombre, int activo) {
+        this.nombre = nombre;
+        this.activo = activo;
+    }
+
+    public categoria() {
+    }
+    
     
 }
