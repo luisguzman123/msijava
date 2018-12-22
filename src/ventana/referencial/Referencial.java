@@ -42,6 +42,7 @@ public class Referencial extends javax.swing.JInternalFrame {
         jPanel5 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
 
@@ -189,15 +190,23 @@ public class Referencial extends javax.swing.JInternalFrame {
 
         jTabbedPane1.addTab("Clientes", jPanel6);
 
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addContainerGap(512, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(449, 449, 449))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(jLabel2)
+                .addContainerGap(268, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vendedor", jPanel7);
@@ -247,6 +256,7 @@ public class Referencial extends javax.swing.JInternalFrame {
     private javax.swing.JCheckBox activo_sucursal_cbx;
     private javax.swing.JButton agregar_sucursal_btn;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
