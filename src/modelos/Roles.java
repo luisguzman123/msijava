@@ -14,6 +14,12 @@ public class Roles {
     private String descripcion;
     private int activo;
 
+    public Roles(int id_rol, String descripcion, int activo) {
+        this.id_rol = id_rol;
+        this.descripcion = descripcion;
+        this.activo = activo;
+    }
+
     public Roles(String descripcion, int activo) {
         this.descripcion = descripcion;
         this.activo = activo;
