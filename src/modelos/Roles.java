@@ -9,33 +9,33 @@ package modelos;
  *
  * @author Oliver Acosta
  */
-public class categoria {
-    private int id_categoria;
-    private String nombre;
+public class Roles {
+     private int id_rol;
+    private String descripcion;
     private int activo;
 
-    public categoria(String nombre, int activo) {
-        this.nombre = nombre;
+    public Roles(String descripcion, int activo) {
+        this.descripcion = descripcion;
         this.activo = activo;
     }
 
-    public categoria() {
+    public Roles() {
     }
 
-    public int getId_categoria() {
-        return id_categoria;
+    public int getId_rol() {
+        return id_rol;
     }
 
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setId_rol(int id_rol) {
+        this.id_rol = id_rol;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public int getActivo() {
@@ -45,6 +45,5 @@ public class categoria {
     public void setActivo(int activo) {
         this.activo = activo;
     }
-    
     
 }
