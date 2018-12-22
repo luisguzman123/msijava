@@ -22,6 +22,14 @@ public class categoria {
     public categoria() {
     }
 
+    public categoria(int id_categoria, String nombre, int activo) {
+        this.id_categoria = id_categoria;
+        this.nombre = nombre;
+        this.activo = activo;
+    }
+    
+    
+
     public int getId_categoria() {
         return id_categoria;
     }

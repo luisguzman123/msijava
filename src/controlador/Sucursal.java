@@ -70,7 +70,7 @@ public class Sucursal {
         Statement pst= conex.createStatement();
         ResultSet rs= pst.executeQuery(sql);
         while(rs.next()){
-        datos.add(new modelos.Sucursal(rs.getInt(1), rs.getString(2), rs.getInt(3)));
+        datos.add(new modelos.Sucursal(rs.getInt(1), rs.getString(2).trim(), rs.getInt(3)));
       
         }
     
