@@ -7,6 +7,7 @@ package ventana.referencial;
 
 import java.awt.Checkbox;
 import javax.swing.JCheckBox;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 /**
@@ -53,6 +54,19 @@ public class Referencial extends javax.swing.JInternalFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        TXT_NOMBRE_provee = new javax.swing.JTextField();
+        TXT_RUC_provee = new javax.swing.JTextField();
+        TXT_TELEFONO_provee = new javax.swing.JTextField();
+        TXT_DIRECCION_provee = new javax.swing.JTextField();
+        TXT_CORREO_provee = new javax.swing.JTextField();
+        activo_proveedor = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TABLA_PROVEEDOR = new javax.swing.JTable();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -139,7 +153,7 @@ public class Referencial extends javax.swing.JInternalFrame {
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(221, Short.MAX_VALUE))
+                .addContainerGap(274, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sucursales", jPanel1);
@@ -220,7 +234,7 @@ public class Referencial extends javax.swing.JInternalFrame {
                 .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Marca", jPanel2);
@@ -241,7 +255,7 @@ public class Referencial extends javax.swing.JInternalFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jButton2)
-                .addContainerGap(555, Short.MAX_VALUE))
+                .addContainerGap(613, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Categoria", jPanel3);
@@ -262,20 +276,156 @@ public class Referencial extends javax.swing.JInternalFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
                 .addComponent(jLabel2)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(483, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sub Categoria", jPanel4);
+
+        jLabel5.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("RUC:");
+
+        jLabel6.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("TELEFONO:");
+
+        jLabel7.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("CORREO ELECTRONICO:");
+
+        jLabel8.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("DIRECCION:");
+
+        TXT_NOMBRE_provee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT_NOMBRE_proveeActionPerformed(evt);
+            }
+        });
+
+        TXT_RUC_provee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT_RUC_proveeActionPerformed(evt);
+            }
+        });
+
+        TXT_TELEFONO_provee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT_TELEFONO_proveeActionPerformed(evt);
+            }
+        });
+
+        TXT_DIRECCION_provee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT_DIRECCION_proveeActionPerformed(evt);
+            }
+        });
+
+        TXT_CORREO_provee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TXT_CORREO_proveeActionPerformed(evt);
+            }
+        });
+
+        activo_proveedor.setFont(new java.awt.Font("Stencil", 0, 12)); // NOI18N
+        activo_proveedor.setText("ACTIVO");
+
+        jLabel9.setFont(new java.awt.Font("Schadow BT", 1, 14)); // NOI18N
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("NOMBRE:");
+
+        TABLA_PROVEEDOR.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "PROVEEDOR", "RUC", "TELEFONO", "ACTIVO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        TABLA_PROVEEDOR.setColumnSelectionAllowed(true);
+        TABLA_PROVEEDOR.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(TABLA_PROVEEDOR);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1320, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(77, 77, 77)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TXT_RUC_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TXT_NOMBRE_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TXT_TELEFONO_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TXT_DIRECCION_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(TXT_CORREO_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(350, 350, 350)
+                        .addComponent(activo_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 746, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(545, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TXT_NOMBRE_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(TXT_RUC_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TXT_TELEFONO_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(TXT_DIRECCION_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(TXT_CORREO_provee, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(activo_proveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         jTabbedPane1.addTab("Proveedor", jPanel5);
@@ -288,7 +438,7 @@ public class Referencial extends javax.swing.JInternalFrame {
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 657, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Clientes", jPanel6);
@@ -309,7 +459,7 @@ public class Referencial extends javax.swing.JInternalFrame {
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(170, 170, 170)
                 .addComponent(jLabel3)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addContainerGap(473, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Vendedor", jPanel7);
@@ -322,7 +472,7 @@ public class Referencial extends javax.swing.JInternalFrame {
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 657, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Usuario", jPanel8);
@@ -335,7 +485,7 @@ public class Referencial extends javax.swing.JInternalFrame {
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 608, Short.MAX_VALUE)
+            .addGap(0, 657, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Rol", jPanel9);
@@ -362,6 +512,26 @@ public class Referencial extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         new vistas.Marcas().guardar(this);
     }//GEN-LAST:event_Agregar_btnActionPerformed
+
+    private void TXT_NOMBRE_proveeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_NOMBRE_proveeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TXT_NOMBRE_proveeActionPerformed
+
+    private void TXT_RUC_proveeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_RUC_proveeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TXT_RUC_proveeActionPerformed
+
+    private void TXT_TELEFONO_proveeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_TELEFONO_proveeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TXT_TELEFONO_proveeActionPerformed
+
+    private void TXT_DIRECCION_proveeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_DIRECCION_proveeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TXT_DIRECCION_proveeActionPerformed
+
+    private void TXT_CORREO_proveeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TXT_CORREO_proveeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TXT_CORREO_proveeActionPerformed
 // componentes de sucursal
     
     public JCheckBox getActivo_sucursal_cbx() {
@@ -380,12 +550,47 @@ public class Referencial extends javax.swing.JInternalFrame {
     public JTextField getNombre_marca_txt() {
         return nombre_marca_txt;
     }
+    //componentes de PROVEEDORES
     
+    public JTable getTABLA_PROVEEDOR() {
+        return TABLA_PROVEEDOR;
+    }
+
+    public JTextField getTXT_CORREO_provee() {
+        return TXT_CORREO_provee;
+    }
+
+    public JTextField getTXT_DIRECCION_provee() {
+        return TXT_DIRECCION_provee;
+    }
+
+    public JTextField getTXT_NOMBRE_provee() {
+        return TXT_NOMBRE_provee;
+    }
+
+    public JTextField getTXT_RUC_provee() {
+        return TXT_RUC_provee;
+    }
+
+    public JTextField getTXT_TELEFONO_provee() {
+        return TXT_TELEFONO_provee;
+    }
+
+    public JCheckBox getActivo_proveedor() {
+        return activo_proveedor;
+    }
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Agregar_btn;
+    private javax.swing.JTable TABLA_PROVEEDOR;
+    private javax.swing.JTextField TXT_CORREO_provee;
+    private javax.swing.JTextField TXT_DIRECCION_provee;
+    private javax.swing.JTextField TXT_NOMBRE_provee;
+    private javax.swing.JTextField TXT_RUC_provee;
+    private javax.swing.JTextField TXT_TELEFONO_provee;
     private javax.swing.JCheckBox activo_Marca_cbx;
+    private javax.swing.JCheckBox activo_proveedor;
     private javax.swing.JCheckBox activo_sucursal_cbx;
     private javax.swing.JButton agregar_sucursal_btn;
     private javax.swing.JButton jButton2;
@@ -393,6 +598,11 @@ public class Referencial extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
@@ -406,6 +616,7 @@ public class Referencial extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
