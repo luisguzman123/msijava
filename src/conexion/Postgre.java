@@ -30,7 +30,7 @@ public class Postgre {
         
         String base_de_datos = "jdbc:postgresql://localhost:5434/ventas";  
         String user ="postgres"; 
-        String pass = "a123";
+        String pass = "admin";
         
         Connection conex = null;
         try { 
