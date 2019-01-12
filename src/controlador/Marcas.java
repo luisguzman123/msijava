@@ -24,9 +24,9 @@ public class Marcas {
         try{//5616516516161
             PreparedStatement pst=conex.prepareStatement(
             " INSERT INTO marcas "
-            +"(descripcion, activo)"+
+            +"(nombre, activo)"+
             "VALUES(?,?)");
-            pst.setString(1, objeto.getDesc());
+            pst.setString(1, objeto.getNombre());
             pst.setInt(2, objeto.getEstado());
               
             pst.executeUpdate();
@@ -42,8 +42,8 @@ public class Marcas {
     public ArrayList<modelos.marcas>dameTodo(){
         ArrayList<modelos.marcas> datos = new ArrayList<>();
         try{
-            String sql="SELECT id_marca, descripcion, activo "// colocar espacio antes de la camillas dobles
-                    + " FROM marca ";
+            String sql="SELECT id_marca, nombre, activo "// colocar espacio antes de la camillas dobles
+                    + " FROM marcas ";
         Statement pst= conex.createStatement();
         ResultSet rs= pst.executeQuery(sql);
         while(rs.next()){

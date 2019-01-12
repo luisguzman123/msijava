@@ -18,12 +18,19 @@ public class Marcas {
             ventana.getNombre_marca_txt().requestFocus();
             return;
        }
+        int activo= 0;// validar el checbox
         if(!ventana.getActivo_Marca_cbx().isSelected()){
             if(JOptionPane.showConfirmDialog(ventana, "Estas seguro de guardar conel estado inactivo","Advertencia",
                     JOptionPane.YES_NO_OPTION) == JOptionPane.NO_OPTION){
                 return;
                 
             }
-        }
+        }else {
+            activo = 1;
+            }
+        
+        new controlador.Marcas().guardar(new modelos.marcas(
+        ventana.getNombre_marca_txt().getText(),activo));
+    JOptionPane.showMessageDialog(ventana, "Guardado Correctamente" );
     }
 }

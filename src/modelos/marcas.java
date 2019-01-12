@@ -12,21 +12,21 @@ package modelos;
 public class marcas {
 
     private int id;
-    private String desc;
+    private String nombre;
     private int estado;
 
-    public marcas(int id, String desc, int estado) {
+    public marcas(int id, String nombre, int estado) {
         this.id = id;
-        this.desc = desc;
+        this.nombre = nombre;
+        this.estado = estado;
+    }
+
+    public marcas(String nombre, int estado) {
+        this.nombre = nombre;
         this.estado = estado;
     }
 
     public marcas() {
-    }
-
-    public marcas(String desc, int estado) {
-        this.desc = desc;
-        this.estado = estado;
     }
 
     public int getId() {
@@ -37,12 +37,12 @@ public class marcas {
         this.id = id;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getEstado() {
@@ -53,4 +53,5 @@ public class marcas {
         this.estado = estado;
     }
 
+   
 }

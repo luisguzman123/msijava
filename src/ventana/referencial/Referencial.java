@@ -360,6 +360,7 @@ public class Referencial extends javax.swing.JInternalFrame {
 
     private void Agregar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Agregar_btnActionPerformed
         // TODO add your handling code here:
+        new vistas.Marcas().guardar(this);
     }//GEN-LAST:event_Agregar_btnActionPerformed
 // componentes de sucursal
     
