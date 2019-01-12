@@ -25,6 +25,5 @@ public class Marcas {
                 
             }
         }
-        new controlador.
     }
 }
